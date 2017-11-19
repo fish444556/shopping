@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1>I'm a Todo Master <span class="label label-info"><!-- {{ todos.length }} --></span></h1>
+    </div>
+    <title>Node/Angular Todo App</title>
+
+
+
+    <div class="col-sm-4 col-sm-offset-4">
+
+      <div class="checkbox" *ngFor="let todo of todos; let i = index"
+        (click)='deleteTodo($event, todo._id)'
+      >
+        <label>
+            <input type="checkbox" >  {{ todo.text }}
+        </label>
+    </div>
+    </div>
+
+    <div id="todo-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <form  novalidate>
+                <div class="form-group">
+
+                    <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                    <input type="text" class="form-control input-lg text-center" placeholder="What do you want to do?"  #todoText [value]="todoText.value"
+                    >
+                </div>
+                <!-- createToDo() WILL CREATE NEW TODOS -->
+                <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                (click)="createTodo(todoText.value);todoText.value=''"
+                >Add</button>
+            </form>
+        </div>
+    </div>
+</div>
