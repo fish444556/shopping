@@ -6,6 +6,7 @@ var mongoose=require('mongoose');   // mongoose for mongoDB
 var morgan=require('morgan');  // log requests to the console
 var bodyParser=require('body-parser');  // pull information from HTML POST
 var methodOverride=require('method-override'); // simulate DELETE and PUT
+var router = express.Router();
 
 
 // configuration ================================================
@@ -25,6 +26,8 @@ mongoose.connect(database.url);
 // routes =====================================
 // require('./server/app/routes')(app);
 require('./server/app/route_login')(app);
+// require('./routes')(app);
+// route.use('./server/app/route_login')
 
 app.use(function(err, req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');

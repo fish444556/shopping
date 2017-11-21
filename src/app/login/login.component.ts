@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
         console.log('Login successfully');
         localStorage.setItem('firstName',JSON.stringify(res.json().firstName));
         this.userService.showNavBar(true);
-        // this._router.navigate(['Welcome']);
       }
     })
   }

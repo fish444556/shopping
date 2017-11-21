@@ -1,0 +1,17 @@
+<form class="login-by-username" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="line-username input-line">
+  <input type="text" class="username-input" name="email" placeholder="Email" [(ngModel)]="email" required/>
+  </div>
+  <div class="line-username input-line">
+    <input type="text" class="username-input" name="firstName" placeholder="First Name" [(ngModel)]="firstName" required/>
+  </div>
+  <div class="line-username input-line">
+    <input type="text" class="username-input" name="lastName" placeholder="Last Name" [(ngModel)]="lastName" required/>
+  </div>
+  <div class="line-password input-line">
+    <input type="password" class="password-input" name="password" placeholder="Password" [(ngModel)]="password" required/>
+  </div>
+  <div class="line-submit-button input-line ">
+    <button>Submit</button>
+  </div>
+</form>

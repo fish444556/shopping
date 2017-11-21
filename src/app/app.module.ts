@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './user.service';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserService } from './user.service';
     ConnectedBackComponent,
     NavComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,10 @@ import { UserService } from './user.service';
       {
         path:'login',
         component:LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ])
   ],

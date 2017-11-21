@@ -5,8 +5,8 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class UserService {
-  registerUrl = 'http://localhost:8088/api/register';
-  loginUrl = 'http://localhost:8088/api/user';
+  registerUrl = 'http://localhost:8088/user/register';
+  loginUrl = 'http://localhost:8088/user/login';
   userStatus: number = 0;
 
   constructor(private http: Http) { }
