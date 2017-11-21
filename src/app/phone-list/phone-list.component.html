@@ -22,7 +22,7 @@
 
     <ul class="phones">
       <!-- <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail"> -->
-      <li *ngFor="let phone of phones">
+      <li *ngFor="let phone of phones" class="thumbnail">
         <div *ngIf="phone.id != null">
           <a href="#!/phones/{{phone.id}}" class="thumb">
             <img src="../../assets/{{phone.images[0]}}" alt="{{phone.name}}" />
