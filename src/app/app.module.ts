@@ -11,7 +11,9 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './user.service';
+import { PhonesService } from './phones.service';
 import { RegisterComponent } from './register/register.component';
+import { PhoneListComponent } from './phone-list/phone-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { RegisterComponent } from './register/register.component';
     NavComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PhoneListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,11 @@ import { RegisterComponent } from './register/register.component';
       }
     ])
   ],
-  providers: [GetDataService, UserService],
+  providers: [
+    GetDataService,
+    UserService,
+    PhonesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

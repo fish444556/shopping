@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class PhonesService {
-
-  constructor() { }
-
+  phoneUrl = 'http://localhost:8088/phone';
+  constructor(private http: Http) {  }
+  getPhones() {
+    return this.http.get(this.phoneUrl);
+  }
 }
