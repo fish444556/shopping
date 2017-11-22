@@ -8,7 +8,7 @@ import { UserService } from '../user.service'
 })
 export class LoginComponent implements OnInit {
 
-  username: string = '';
+  email: string = '';
   password: string = '';
   constructor(private userService: UserService) { }
 
@@ -17,8 +17,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(f) {
     this.userService.userLogin(
-      {"email": this.username, "password": this.password}
+      {"email": this.email, "password": this.password}
     ).subscribe(res => {
+      debugger
       if (res.json() == null) {
         console.log('Cannot find user');
       }

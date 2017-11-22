@@ -18,10 +18,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(f) {
-    this.userService.userLogin(
+    this.userService.checklogin(
       {"email": this.email}
     ).subscribe(res => {
+      debugger
       if (res.json() != null) {
+        debugger;
         console.log('Email exists');
         ;
       }
@@ -34,15 +36,9 @@ export class RegisterComponent implements OnInit {
             "password": this.password
           }
         ).subscribe(res => {
-          debugger
-          if (res.json() == null) {
-            console.log('Cannot find user');
-          }
-          else {
-            console.log('Login successfully');
-            localStorage.setItem('firstName',JSON.stringify(res.json().firstName));
-            this.userService.showNavBar(true);
-          }
+          console.log('Register successfully');
+          localStorage.setItem('firstName',JSON.stringify(res.json().firstName));
+          this.userService.showNavBar(true);
         })
       }
     })

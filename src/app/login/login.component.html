@@ -24,9 +24,9 @@
     </p>
   </div>
 </form> -->
-<form class="login-by-username" (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div class="line-username input-line">
-    <input type="text" class="username-input" name="username" placeholder="Username" [(ngModel)]="username" required/>
+<form class="login-by-email" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="line-email input-line">
+    <input type="text" class="email-input" name="email" placeholder="email" [(ngModel)]="email" required/>
   </div>
   <div class="line-password input-line">
     <input type="password" class="password-input" name="password" placeholder="Password" [(ngModel)]="password" required/>

@@ -14,6 +14,7 @@ import { UserService } from './user.service';
 import { PhonesService } from './phones.service';
 import { RegisterComponent } from './register/register.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
+import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PhoneListComponent } from './phone-list/phone-list.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    PhoneListComponent
+    PhoneListComponent,
+    PhoneDetailComponent
   ],
   imports: [
     BrowserModule,

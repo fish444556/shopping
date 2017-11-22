@@ -5,8 +5,7 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class UserService {
-  registerUrl = 'http://localhost:8088/user/register';
-  loginUrl = 'http://localhost:8088/user/login';
+  url = 'http://localhost:8088/user';
   userStatus: number = 0;
 
   constructor(private http: Http) { }
@@ -15,11 +14,15 @@ export class UserService {
   public showNavBarEmitter: Observable<boolean> = this._showNavBar.asObservable();
 
   userRegister(registerData){
-    return this.http.post(this.registerUrl, registerData);
+    return this.http.post(this.url + '/register', registerData);
   }
 
   userLogin(loginData) {
-    return this.http.post(this.loginUrl, loginData);
+    return this.http.post(this.url + '/login', loginData);
+  }
+
+  checklogin(checkloginData) {
+    return this.http.post(this.url + '/checklogin', checkloginData);
   }
 
   showNavBar(ifShow: boolean) {
