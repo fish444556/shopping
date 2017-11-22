@@ -47,6 +47,19 @@ import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'phone-list',
+        component: PhoneListComponent
+      },
+      {
+        path: 'phone-detail/:id',
+        component: PhoneDetailComponent
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
       }
     ])
   ],
