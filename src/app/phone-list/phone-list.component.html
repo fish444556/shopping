@@ -3,35 +3,35 @@
     <div class="col-md-2">
       <!--Sidebar content-->
 
-      <!--  <p>
-      Search:
-      <input ng-model="$ctrl.query" />
-    </p>
+      <p>
+        Search:
+        <input [(ngModel)]="query" />
+      </p>
 
-    <p>
-      Sort by:
-      <select ng-model="$ctrl.orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
-    </p> -->
+      <p>
+        Sort by:
+        <select [(ngModel)]="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+      </p>
 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li *ngFor="let phone of phones" class="thumbnail">
+          <div *ngIf="phone.id != null">
+            <a [routerLink]="['/phone-detail', phone.id]" class="thumb">
+              <img src="../../assets/{{phone.images[0]}}" alt="{{phone.name}}" />
+            </a>
+            <a [routerLink]="['/phone-detail', phone.id]">{{phone.name}}</a>
+            <p>{{phone.additionalFeatures }}</p>
+          </div>
+        </li>
+      </ul>
+
+    </div>
   </div>
-  <div class="col-md-10">
-    <!--Body content-->
-
-    <ul class="phones">
-      <li *ngFor="let phone of phones" class="thumbnail">
-        <div *ngIf="phone.id != null">
-          <a [routerLink]="['/phone-detail', phone.id]" class="thumb">
-            <img src="../../assets/{{phone.images[0]}}" alt="{{phone.name}}" />
-          </a>
-          <a [routerLink]="['/phone-detail', phone.id]">{{phone.name}}</a>
-          <p>{{phone.additionalFeatures }}</p>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-</div>
 </div>

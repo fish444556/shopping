@@ -8,6 +8,8 @@ import { PhonesService } from '../phones.service';
 })
 export class PhoneListComponent implements OnInit {
   phones = [];
+  query: string = '';
+  orderProp: string = 'name';
   constructor(private phonesService: PhonesService) {
     this.phonesService.getPhones()
       .subscribe(res => {

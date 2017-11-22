@@ -1,29 +1,3 @@
-<!-- <head-nav> -->
-  <!-- <div class="nav-left"><span class="iconfont">&#xe697;</span><span>返回</span></div>
-  <div class="nav-middle">  <span  class="iconfont loading-tip">&#xe609;</span></div> -->
-  <!-- <div class="nav-middle">  <span *ngIf="logining" class="iconfont loading-tip">&#xe609;</span></div> -->
-  <!-- <div class="nav-right" (click)="loginByPhoneNum=!loginByPhoneNum;captcha=null;loginFail=false;">{{loginByPhoneNum?'密码登录':'手机号登录'}}</div> -->
-  <!-- <div class="nav-right" >密码登录手机号登录</div> -->
-<!-- </head-nav> -->
-<!-- <div class="notice" *ngIf="notice">{{notice}}</div>
-<form class="login-by-phoneNum" *ngIf="loginByPhoneNum" #phoneNumLogin="ngForm">
-  <div class="line-phoneNum input-line">
-    <input type="number" name="phoneNum" class="phoneNum-input" placeholder="请输入手机号"
-           [(ngModel)]="phone" #phoneNum required/>
-  </div>
-  <div class="line-verify-code input-line">
-    <input type="number" name="verifyCode" class="verify-code-input" placeholder="请输入短信验证码"
-           [(ngModel)]="verifyCode" required/>
-    <input type="button" name="submitBtn" [value]="verifyBtnContent" class="verify-code-send-input"
-           [class.disabled]="(phoneNum.value.length!=11)||(hasSend&&!resend)" [class.resend]="resend"
-           (click)="sendMessage('',phoneNum.value)" [disabled]="(phoneNum.value.length!=11)||(hasSend&&!resend)"/>
-  </div>
-  <div class="agreement-wrapper">
-    <p>
-      温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意<a href="#" target="_blank">用户服务协议</a>
-    </p>
-  </div>
-</form> -->
 <form class="login-by-email" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="line-email input-line">
     <input type="text" class="email-input" name="email" placeholder="email" [(ngModel)]="email" required/>
@@ -31,29 +5,13 @@
   <div class="line-password input-line">
     <input type="password" class="password-input" name="password" placeholder="Password" [(ngModel)]="password" required/>
   </div>
-  <!-- <div class="line-captcha input-line" *ngIf="loginFail">
-    <input type="text" class="captcha-input" name="captchaCode" [(ngModel)]="captchaCode" placeholder="请输入图片验证码"/>
-    <img *ngIf="captcha" [src]="'http://mainsite-restapi.ele.me/v1/captchas/'+captcha" class="captcha-img" />
-  </div> -->
+
   <div class="find-password-wrapper">
     <p><a href="#" target="_blank">Forget password</a></p>
   </div>
 <div class="line-submit-button input-line ">
-  <!-- <input type="button" class="submit-button" value="登录"
-         (click)="loginByPhoneNum?mobileLogin(verifyCode):passwordLogin()" /> -->
+
   <button>Submit</button>
 </div>
 </form>
 
-<!-- <popup *ngIf="captcha&&loginByPhoneNum">
-  <div class="popup-title">请输入验证码</div>
-  <div class="popup-content">
-    <input type="text" [(ngModel)]="captchaCode" class="captcha-input"  placeholder="请输入图片验证码"/>
-    <img [src]="'http://mainsite-restapi.ele.me/v1/captchas/'+captcha" class="captcha-img" />
-  </div>
-  <div class="popup-buttons">
-    <input type="button" value="取消" class="cancel-button" />
-    <input type="button" value="确定" class="confirm-button" (click)="sendMessage(captchaCode,phone)" />
-  </div>
-</popup>
- -->
