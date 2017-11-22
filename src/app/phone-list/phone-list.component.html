@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
+    <!-- <div class="col-md-2">
+      Sidebar content
 
       <p>
         Search:
@@ -16,11 +16,12 @@
         </select>
       </p>
 
-    </div>
+    </div> -->
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="phones">
+        <!-- TODO add search pipe to filter data, the first time failed. Error with "The pipe 'SearchPipe' could not be found" -->
         <li *ngFor="let phone of phones" class="thumbnail">
           <div *ngIf="phone.id != null">
             <a [routerLink]="['/phone-detail', phone.id]" class="thumb">

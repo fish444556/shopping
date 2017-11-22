@@ -15,6 +15,7 @@ import { PhonesService } from './phones.service';
 import { RegisterComponent } from './register/register.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
     LoginComponent,
     RegisterComponent,
     PhoneListComponent,
-    PhoneDetailComponent
+    PhoneDetailComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
