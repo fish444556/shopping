@@ -5,7 +5,7 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class CartService {
 
-  cart: any = [];
+  cart: any = {};
   constructor() { }
 
   private addToCartSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
@@ -16,7 +16,14 @@ export class CartService {
   }
 
   addProductToCart(phone: object) {
-    this.cart.push(phone);
+    console.log(phone)
+    // this.cart = {
+    //   ...this.cart,
+    //   phone['name']: [phone, (this.cart[phone[1]] || 0) + 1]
+    // };
+    debugger
+    this.cart[phone['name']] = this.cart[phone['name']] ? [phone, this.cart[phone['name']][1] + 1] : [phone, 1]
+    console.log(this.cart)
   }
 
   getCart() {

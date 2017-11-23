@@ -1,7 +1,7 @@
 <div *ngIf="cart != null" class="container">
   <div *ngFor="let item of cart">
-    <img src='../../assets/{{item.images[0]}}'>
-    <span> {{item.name}}</span>
-    <p> {{item.price}}</p>
+    <img src='../../assets/{{item[0].images[0]}}'>
+    <span> {{item[0].name}}</span>
+    <app-quantity [phone]="item[0]"></app-quantity>
   </div>
 </div>

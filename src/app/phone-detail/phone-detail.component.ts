@@ -47,8 +47,8 @@ export class PhoneDetailComponent implements OnInit {
 
   addToCart(phone) {
     // debugger
-    this.cartService.addToCart(true);
     this.cartService.addProductToCart(phone);
+    this.cartService.addToCart(true);
     // console.log(this.cartService.getCart());
 
   }

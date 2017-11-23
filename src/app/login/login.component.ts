@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     this.userService.userLogin(
       {"email": this.email, "password": this.password}
     ).subscribe(res => {
+      debugger
       if (res.json() == null) {
         console.log('Cannot find user');
       }

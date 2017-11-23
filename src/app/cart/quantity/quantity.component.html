@@ -1,3 +1,6 @@
-<p>
-  quantity works!
-</p>
+{{quantity * phone.price | currency}}
+<div class="quantity-selector">
+<div class="minus" (click)="handleMinusClick()">-</div>
+  <div class="value">{{quantity}}</div>
+  <div class="plus" (click)="handlePlusClick()">+</div>
+</div>
