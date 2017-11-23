@@ -1,3 +1,5 @@
+<app-cart></app-cart>
+
 <div *ngIf='phone !== null'>
   <img src="../../assets/{{largeDisplayImg}}" class="phone" />
 
@@ -10,6 +12,8 @@
       <img src="../../assets/{{img}}" (click)=switchedDisplayImg(i) />
     </li>
   </ul>
+
+  <button class="btn btn-primary" (click)="addToCart(phone)" >Add to Cart</button>
 
   <ul class="specs">
     <li>
@@ -113,3 +117,4 @@
     </li>
   </ul>
 </div>
+

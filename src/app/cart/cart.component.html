@@ -1,0 +1,7 @@
+<div *ngIf="cart != null" class="container">
+  <div *ngFor="let item of cart">
+    <img src='../../assets/{{item.images[0]}}'>
+    <span> {{item.name}}</span>
+    <p> {{item.price}}</p>
+  </div>
+</div>

@@ -12,10 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './user.service';
 import { PhonesService } from './phones.service';
+import { CartService } from './cart.service';
 import { RegisterComponent } from './register/register.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { SearchPipe } from './search.pipe';
+import { CartComponent } from './cart/cart.component';
+import { QuantityComponent } from './cart/quantity/quantity.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { SearchPipe } from './search.pipe';
     RegisterComponent,
     PhoneListComponent,
     PhoneDetailComponent,
-    SearchPipe
+    SearchPipe,
+    CartComponent,
+    QuantityComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,8 @@ import { SearchPipe } from './search.pipe';
   providers: [
     GetDataService,
     UserService,
-    PhonesService
+    PhonesService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })

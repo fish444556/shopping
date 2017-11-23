@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhonesService } from '../phones.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-phone-detail',
@@ -15,7 +16,8 @@ export class PhoneDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private phonesService: PhonesService
+    private phonesService: PhonesService,
+    private cartService: CartService
     ) {
 
   }
@@ -43,4 +45,11 @@ export class PhoneDetailComponent implements OnInit {
     this.largeDisplayImg = this.phone['images'][idx];
   }
 
+  addToCart(phone) {
+    // debugger
+    this.cartService.addToCart(true);
+    this.cartService.addProductToCart(phone);
+    // console.log(this.cartService.getCart());
+
+  }
 }
