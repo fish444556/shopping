@@ -23,3 +23,8 @@
   height: 50%;
   width: 50%;
 }
+
+.checkout-btn {
+  margin: 2%;
+  float: right;
+}

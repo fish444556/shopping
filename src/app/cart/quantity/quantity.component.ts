@@ -7,9 +7,9 @@ import { CartService } from '../../cart.service';
   styleUrls: ['./quantity.component.css']
 })
 export class QuantityComponent implements OnInit {
-  quantity: number = 1;
   price: number = 0;
   @Input('phone') phone: object;
+
   constructor(private cartService: CartService) {
 
   }
@@ -19,14 +19,22 @@ export class QuantityComponent implements OnInit {
 
   @Input('quantityInput') quantityInput: number;
   handleMinusClick() {
-    if (this.quantity > 0) {
-      this.quantity--;
+    console.log(this.quantityInput)
+    if (this.quantityInput > 0) {
+      this.quantityInput--;
+      this.cartService.minusProductFromCart(this.phone);
+      this.cartService.changeQuantity(true);
     }
   }
 
   handlePlusClick() {
-    if (this.quantity < this.phone['quantity']) {
-      this.quantity++;
+    console.log(this.quantityInput)
+    if (this.quantityInput < this.phone['quantity']) {
+      debugger
+      this.quantityInput++;
+      this.cartService.addProductToCart(this.phone);
+      this.cartService.changeQuantity(true);
+      // this.cartService.addToCart(true);
     }
   }
 }

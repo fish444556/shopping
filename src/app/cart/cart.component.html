@@ -2,6 +2,12 @@
   <div *ngFor="let item of cart">
     <img src='../../assets/{{item[0].images[0]}}'>
     <span> {{item[0].name}}</span>
-    <app-quantity [phone]="item[0]"></app-quantity>
+    <app-quantity
+    [phone]="item[0]"
+    [quantityInput]="item[1]"
+    ></app-quantity>
   </div>
+  <h3>Total Money: {{totalMoney | currency}}</h3>
+  <button class="btn btn-default checkout-btn" (click)="checkOut()">Check Out</button>
 </div>
+

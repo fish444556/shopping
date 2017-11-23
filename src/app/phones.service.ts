@@ -8,4 +8,11 @@ export class PhonesService {
   getPhones() {
     return this.http.get(this.phoneUrl);
   }
+
+  updatePhones(phone, purchasedQuantity) {
+    return this.http.put(this.phoneUrl + '/update', {
+      name: phone['name'],
+      quantity: phone['quantity'] - purchasedQuantity
+    });
+  }
 }
