@@ -11,7 +11,6 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {
     this.cartService.addToCartEmitter.subscribe(mode => {
       if (mode !== null) {
-        debugger
         console.log(typeof(this.cartService.getCart()))
         let tmpObj = this.cartService.getCart();
         this.cart = Object.keys(tmpObj).reduce((a, b) => {

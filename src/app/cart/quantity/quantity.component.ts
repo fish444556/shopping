@@ -7,21 +7,11 @@ import { CartService } from '../../cart.service';
   styleUrls: ['./quantity.component.css']
 })
 export class QuantityComponent implements OnInit {
-  quantity: number = 0;
+  quantity: number = 1;
   price: number = 0;
   @Input('phone') phone: object;
   constructor(private cartService: CartService) {
-    this.cartService.addToCartEmitter.subscribe(mode => {
-      if (mode !== null) {
-        debugger
-        this.quantity
-        console.log(this.phone)
-        // this.phone['quantity']
-        // if (this.quantity < this.phone['quantity']) {
-        //   this.quantity++;
-        // }
-      }
-    });
+
   }
 
   ngOnInit() {

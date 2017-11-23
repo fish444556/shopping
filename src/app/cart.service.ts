@@ -21,7 +21,7 @@ export class CartService {
     //   ...this.cart,
     //   phone['name']: [phone, (this.cart[phone[1]] || 0) + 1]
     // };
-    debugger
+    // debugger
     this.cart[phone['name']] = this.cart[phone['name']] ? [phone, this.cart[phone['name']][1] + 1] : [phone, 1]
     console.log(this.cart)
   }
