@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/observable/forkJoin';
 import {Observable} from 'rxjs/Observable';
+import { Router } from "@angular/router";
 
 import { CartService } from '../cart.service';
 import { PhonesService } from '../phones.service';
@@ -15,7 +16,8 @@ export class CartComponent implements OnInit {
   totalMoney: number = 0;
   constructor(
     private cartService: CartService,
-    private phonesService: PhonesService
+    private phonesService: PhonesService,
+    private router: Router
   ) {
     this.cartService.addToCartEmitter.subscribe(mode => {
       if (mode !== null) {
@@ -37,7 +39,6 @@ export class CartComponent implements OnInit {
         this.totalMoney = 0;
         let tmpObj = this.cartService.getCart();
         this.cart = Object.keys(tmpObj).reduce((a, b) => {
-          debugger
           a = [...a, tmpObj[b]]
           console.log(tmpObj[b][0]['price'])
           this.totalMoney += tmpObj[b][0]['price'] * tmpObj[b][1];
@@ -53,19 +54,19 @@ export class CartComponent implements OnInit {
 
   checkOut() {
     debugger
+    console.log(localStorage.getItem('firstName'))
+    if (localStorage.getItem('firstName') == '') {
+      this.router.navigate(['/login']);
+      return false;
+    }
     let tmpAsynArr = Object.keys(this.cart).reduce((a, idx) => {
-      debugger
       a = [...a, this.phonesService.updatePhones(this.cart[idx][0], this.cart[idx][1])]
       return a;
     }, []);
     Observable.forkJoin(tmpAsynArr).subscribe(res => {
+      debugger
       this.cart = null;
     });
   }
-
-
-  // getQuantity($event) {
-
-  // }
 
 }

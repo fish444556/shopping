@@ -30,11 +30,9 @@ export class QuantityComponent implements OnInit {
   handlePlusClick() {
     console.log(this.quantityInput)
     if (this.quantityInput < this.phone['quantity']) {
-      debugger
       this.quantityInput++;
       this.cartService.addProductToCart(this.phone);
       this.cartService.changeQuantity(true);
-      // this.cartService.addToCart(true);
     }
   }
 }
