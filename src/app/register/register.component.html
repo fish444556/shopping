@@ -1,17 +1,25 @@
-<form class="login-by-username" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <h2>Sign up</h2>
   <div class="line-username input-line">
-  <input type="text" class="username-input" name="email" placeholder="Email" [(ngModel)]="email" required/>
+    <label for="email">Email:</label>
+    <input type="text" class="username-input form-control" name="email" placeholder="Email" id="email" [(ngModel)]="email" required/>
   </div>
   <div class="line-username input-line">
-    <input type="text" class="username-input" name="firstName" placeholder="First Name" [(ngModel)]="firstName" required/>
+    <label for="email">First Name:</label>
+    <input type="text" class="username-input form-control" name="firstName" placeholder="First Name" id="first-name" [(ngModel)]="firstName" required/>
   </div>
   <div class="line-username input-line">
-    <input type="text" class="username-input" name="lastName" placeholder="Last Name" [(ngModel)]="lastName" required/>
+    <label for="email">Last Name:</label>
+    <input type="text" class="username-input form-control" name="lastName" placeholder="Last Name" id="last-name" [(ngModel)]="lastName" required/>
   </div>
   <div class="line-password input-line">
-    <input type="password" class="password-input" name="password" placeholder="Password" [(ngModel)]="password" required/>
+    <label for="password">Password:</label>
+    <input type="password" class="password-input form-control" name="password" placeholder="Password" [(ngModel)]="password" required/>
   </div>
   <div class="line-submit-button input-line ">
-    <button>Submit</button>
+    <button class="btn btn-primary form-control">Sign Up</button>
   </div>
+
+  <hr class="hr-text" data-content="Has account?">
+  <p>Already have an account? <a routerLink="/login">Sign in</a> </p>
 </form>
