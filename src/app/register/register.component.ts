@@ -12,20 +12,23 @@ export class RegisterComponent implements OnInit {
   firstName: string = '';
   lastName: string = '';
   password: string = '';
+  password2: string = '';
+  error_info: string = '';
   constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
   onSubmit(f) {
+    if (this.password !== this.password2) {
+      alert('dfsdfdsfds');
+      return ;
+    }
     this.userService.checklogin(
       {"email": this.email}
     ).subscribe(res => {
-      debugger
       if (res.json() != null) {
-        debugger;
-        console.log('Email exists');
-        ;
+        this.error_info = 'Email existed';
       }
       else {
         this.userService.userRegister(

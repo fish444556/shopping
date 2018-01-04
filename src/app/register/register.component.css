@@ -1,14 +1,24 @@
 .container {
 	margin: 0 auto;
-	/*background-color: red;*/
-	width: 20em;
-	height: 28em;
+	width: 23em;
+}
+
+.container .error-reminder {
+	border: 0.1em solid red;
+	border-radius: 0.3em 0.3em;
+	height: 5em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	padding-top: 1.5em;
+}
+
+.container .register-form {
+	height: 34em;
 	padding: 0 2em;
 	font-size: 1.2em;
 	border: 0.1em solid #ccc;
 	border-radius: 0.3em 0.3em;
 }
-
 .container div {
 	margin-top: 0.2em;
 }

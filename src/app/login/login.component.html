@@ -1,26 +1,32 @@
-<form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <h2>Sign in</h2>
-  <div class="item">
-    <label for="email">Email:</label>
-    <input type="text" class="email-input form-control" name="email" id="email" placeholder="email" [(ngModel)]="email" required/>
-  </div>
-  <div class="item">
-    <label for="password">Password:</label>
-    <input type="password" class="password-input form-control" name="password" id="password" placeholder="Password" [(ngModel)]="password" required/>
+<div class="container">
+  <div class="error-reminder" *ngIf="error_info != ''">
+    {{error_info}}
   </div>
 
-  <div class="find-password-wrapper">
-    <p><a href="#" target="_blank">Forget password</a></p>
-  </div>
-  <div class="line-submit-button input-line ">
-    <button class="btn btn-primary form-control">Sign In</button>
-  </div>
+  <form class="login-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <h2>Sign in</h2>
+    <div class="item">
+      <label for="email">Email:</label>
+      <input type="email" class="email-input form-control" name="email" id="email" placeholder="email" [(ngModel)]="email" required/>
+    </div>
+    <div class="item">
+      <label for="password">Password:</label>
+      <input type="password" class="password-input form-control" name="password" id="password" placeholder="Password" [(ngModel)]="password" required/>
+    </div>
 
-  <!-- <div class="break-line"></div> -->
-  <hr class="hr-text" data-content="New User?">
-  <div class="register">
-    <a class="btn btn-default form-control" routerLink="/register">Sign Up</a>
-  </div>
+    <div class="find-password-wrapper">
+      <p><a href="#" target="_blank">Forget password</a></p>
+    </div>
+    <div class="line-submit-button input-line ">
+      <button class="btn btn-primary form-control">Sign In</button>
+    </div>
 
-</form>
+    <!-- <div class="break-line"></div> -->
+    <hr class="hr-text" data-content="New User?">
+    <div class="register">
+      <a class="btn btn-default form-control" routerLink="/register">Sign Up</a>
+    </div>
 
+  </form>
+
+</div>
