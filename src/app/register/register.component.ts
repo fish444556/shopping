@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(f) {
     if (this.password !== this.password2) {
-      alert('dfsdfdsfds');
+      this.error_info = 'password does not match';
       return ;
     }
     this.userService.checklogin(
